@@ -14,7 +14,7 @@ class Car extends Model {
 
     static get relationMappings() {
         return {
-            idea: {
+            user: {
                 relation: Model.BelongsToOneRelation,
                 modelClass: User,
                 join: {
@@ -28,12 +28,12 @@ class Car extends Model {
 
 class User extends Model {
     static get tableName() {
-        return 'cars'
+        return 'users'
     }
 
     static get relationMappings() {
         return {
-            idea: {
+            car: {
                 relation: Model.HasOneRelation,
                 modelClass: Car,
                 join: {
