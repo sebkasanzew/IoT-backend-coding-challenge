@@ -1,6 +1,11 @@
 {
   "name": "iot-backend-coding-challenge",
   "version": "1.0.0",
+  "engines": {
+    "node": "10.11.0",
+    "npm": "6.4.1",
+    "yarn": "1.9.4"
+  },
   "description": "The coding challenge for a backend IoT job.",
   "main": "src/index.js",
   "scripts": {
