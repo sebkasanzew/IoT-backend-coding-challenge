@@ -1,0 +1,48 @@
+{
+  "name": "iot-backend-coding-challenge",
+  "version": "1.0.0",
+  "description": "The coding challenge for a backend IoT job.",
+  "main": "src/index.js",
+  "scripts": {
+    "test": "mocha tests/**/**.spec.js",
+    "prod": "node index.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Sebkasanzew/IoT-backend-coding-challenge.git"
+  },
+  "keywords": [
+    "IoT",
+    "node",
+    "backend",
+    "express",
+    "coding",
+    "challenge"
+  ],
+  "author": "Sebastian Kasanzew",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Sebkasanzew/IoT-backend-coding-challenge/issues"
+  },
+  "homepage": "https://github.com/Sebkasanzew/IoT-backend-coding-challenge#readme",
+  "dependencies": {
+    "body-parser": "^1.18.3",
+    "cors": "^2.8.4",
+    "dotenv": "^6.0.0",
+    "express": "^4.16.3",
+    "knex": "^0.15.2",
+    "objection": "^1.3.0",
+    "pg": "^7.4.3"
+  },
+  "devDependencies": {
+    "babel-cli": "^6.26.0",
+    "babel-core": "^6.26.3",
+    "babel-loader": "^8.0.2",
+    "babel-preset-env": "^1.7.0",
+    "babel-register": "^6.26.0",
+    "chai": "^4.1.2",
+    "eslint": "^5.6.0",
+    "mocha": "^5.2.0",
+    "supertest": "^3.3.0"
+  }
+}
