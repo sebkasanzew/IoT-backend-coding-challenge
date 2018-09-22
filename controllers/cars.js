@@ -21,7 +21,7 @@ router.get('/:id', asyncHandler(async (req, res) => {
 router.post('/', asyncHandler(async (req, res) => {
     const newCar = req.body
 
-    const idea = await Car.query()
+    const car = await Car.query()
         .allowInsert('[car, creator]')
         .insertGraph(newCar)
 
@@ -36,7 +36,7 @@ router.post('/:id/users', asyncHandler(async (req, res) => {
         .allowInsert('[user, creator]')
         .insert(req.body)
 
-    res.send(idea)
+    res.send(car)
 }))
 
 router.delete('/:id', asyncHandler(async (req, res) => {
