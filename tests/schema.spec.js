@@ -1,7 +1,6 @@
 'use strict'
 
-const User = require('../models/schema').User
-const Car = require('../models/schema').Car
+const { Car, User } = require('../models/schema')
 const expect = require('chai').expect
 
 describe('Schema', () => {

@@ -6,6 +6,8 @@ require('dotenv').config()
 
 const app = express()
 
+const cars = require('./controllers/cars')
+
 app.use(parser.urlencoded({extended: true}))
 app.use(parser.json())
 
@@ -14,7 +16,7 @@ app.set('view engine', 'hbs')
 
 app.use(cors())
 
-// app.use('/cars', cars)
+app.use('/cars', cars)
 
 app.listen(app.get('port'), () => {
     console.log('Hello world!')

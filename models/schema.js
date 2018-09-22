@@ -1,6 +1,8 @@
 const Knex = require('knex')
 const connection = require('../knexfile')
-const { Model } = require('objection')
+const {
+    Model
+} = require('objection')
 
 const knexConnection = Knex(connection)
 
@@ -45,4 +47,7 @@ class User extends Model {
     }
 }
 
-module.exports = { Car, User }
+module.exports = {
+    Car,
+    User
+}
