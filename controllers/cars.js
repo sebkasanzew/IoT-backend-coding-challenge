@@ -1,4 +1,5 @@
 const express = require('express')
+const asyncHandler = require('express-async-handler');
 
 const {
     Car,
@@ -7,17 +8,17 @@ const {
 
 const router = express.Router()
 
-router.get('/', async (req, res) => {
+router.get('/', asyncHandler(async (req, res) => {
     const cars = await Car.query()
     res.json(cars)
-})
+}))
 
-router.get('/:id', async (req, res) => {
+router.get('/:id', asyncHandler(async (req, res) => {
     const car = await Car.query().findById(req.params.id).eager('comments')
     res.json(Car)
-})
+}))
 
-router.post('/', async (req, res) => {
+router.post('/', asyncHandler(async (req, res) => {
     const newCar = req.body
 
     const idea = await Car.query()
@@ -25,10 +26,10 @@ router.post('/', async (req, res) => {
         .insertGraph(newCar)
 
     res.send(car)
-})
+}))
 
 // TODO
-router.post('/:id/users', async (req, res) => {
+router.post('/:id/users', asyncHandler(async (req, res) => {
     const car = await Car.query().findById(req.params.id)
 
     await car.$relatedQuery('users')
@@ -36,18 +37,18 @@ router.post('/:id/users', async (req, res) => {
         .insert(req.body)
 
     res.send(idea)
-})
+}))
 
-router.delete('/:id', async (req, res) => {
+router.delete('/:id', asyncHandler(async (req, res) => {
     await Car.query().deleteById(req.params.id)
 
     res.redirect('/cars')
-})
+}))
 
-router.delete('/:id/users/:userId', async (req, res) => {
+router.delete('/:id/users/:userId', asyncHandler(async (req, res) => {
     await User.query().deleteById(req.params.userId)
 
     res.redirect(`/cars/${req.params.id}`)
-})
+}))
 
 module.exports = router
