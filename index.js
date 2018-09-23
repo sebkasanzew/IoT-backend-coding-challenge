@@ -4,6 +4,8 @@ const parser = require('body-parser')
 
 require('dotenv').config()
 
+require('./models/loki-schema')
+
 const app = express()
 
 const cars = require('./controllers/cars')
@@ -19,5 +21,5 @@ app.use(cors())
 app.use('/cars', cars)
 
 app.listen(app.get('port'), () => {
-    console.log('Hello world!')
+    console.log('App started')
 })
