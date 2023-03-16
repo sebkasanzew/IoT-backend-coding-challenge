@@ -3,7 +3,7 @@
   "version": "1.0.0",
   "engines": {
     "node": "10.17.0",
-    "npm": "6.4.1",
+    "npm": "6.14.18",
     "yarn": "1.21.1"
   },
   "description": "The coding challenge for a backend IoT job.",
